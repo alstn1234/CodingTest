@@ -11,7 +11,6 @@ int solution(vector<vector<int>> jobs) {
     int size = jobs.size();
     sort(jobs.begin(), jobs.end());
     
-    
     time += (jobs[0][1] + jobs[0][0]);
     answer += time - jobs[0][0];
     jobs.erase(jobs.begin());
@@ -21,11 +20,9 @@ int solution(vector<vector<int>> jobs) {
         for(int i = 0; i < jobs.size(); i++){
             if(jobs[i][0] <= time){
                 n = i;
-                if(i == 0 && jobs[i][0] == time)
-                    break;
+                continue;
             }
-            else
-                break;
+            break;
         }
         
         int next = 0;
