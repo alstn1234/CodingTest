@@ -4,10 +4,11 @@
 using namespace std;
 
 int solution(int n) {
-    int answer = 0;
+    int answer = 0; 
+    n = (n%2==0) ? n : n-1;
     while(n > 0){
-        n = (n%2==0) ? n : n-1;
-        answer += n--;
+        answer += n;
+        n -= 2;
     }
     return answer;
 }
