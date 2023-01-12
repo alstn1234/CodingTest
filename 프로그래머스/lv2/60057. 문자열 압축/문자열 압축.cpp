@@ -4,7 +4,7 @@
 using namespace std;
 
 int solution(string s) {
-	string answer_str(s);
+    int answer = s.length();
 	int n = 1;
 	while (n <= s.length() / 2) {
 		int dev = s.length() % n;
@@ -27,11 +27,9 @@ int solution(string s) {
 		}
 		if(cnt > 1)
 			str += to_string(cnt);
-		if (dev != 0)
-			str += s.substr(s.length() - dev, dev);
-		if (answer_str.length() > str.length())
-			answer_str = str;
+		if (answer > str.length() + dev)
+			answer = str.length() + dev;
 		n++;
 	}
-	return answer_str.length();
+	return answer;
 }
