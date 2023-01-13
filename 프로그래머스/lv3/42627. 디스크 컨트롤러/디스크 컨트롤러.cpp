@@ -24,15 +24,15 @@ int solution(vector<vector<int>> jobs) {
             }
             n = i;
         }
-        int next = 0;
+        vector<int> next = jobs[0];
         for(int i = 1; i <= n; i++){
-            if(jobs[next][1] >= jobs[i][1])
-                next = i;
+            if(next[1] >= jobs[i][1])
+                next = jobs[i];
         }
         
-        time += jobs[next][1];
-        answer += time - jobs[next][0];
-        jobs.erase(jobs.begin()+next);
+        time += next[1];
+        answer += time - next[0];
+        jobs.erase(remove(jobs.begin(), jobs.end(), next), jobs.end());
     }
     return answer/size;
 }
