@@ -6,7 +6,7 @@ using namespace std;
 
 int solution(vector<int> citations) {
     sort(citations.rbegin(), citations.rend());
-    for(int j = citations[0]; j > 0; j--){
+    for(int j = citations.size(); j > 0; j--){
         for(int i = 0; i < citations.size(); i++){
             if(citations[i] < j){
                 if(i >= j && citations.size() - i <= j){
