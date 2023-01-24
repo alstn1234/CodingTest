@@ -18,22 +18,7 @@ long long solution(vector<int> weights) {
         num = 0;
         for(int j = i + 1; j < weights.size(); j++){
             double w = (double)weights[i] / (double)weights[j];
-            if(w == 1){
-                num++;
-                continue;
-            }
-            if(w == 3.0/2.0){
-                num++;
-                continue;
-            }
-            if(w == 4.0/3.0){
-                num++;
-                continue;
-            }
-            if(w== 2){
-                num++;
-                continue;
-            }
+            if(w == 1 || w == 3.0/2.0 || w == 4.0/3.0 || w== 2) num++;
         }
         answer += num;
     }
