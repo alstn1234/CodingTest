@@ -10,21 +10,20 @@ int solution(vector<vector<int>> scores) {
     vector<int> inho = scores[0];
     int inho_total = inho[0] + inho[1];
     score_total.push_back(inho_total);
-    for(int i = 1; i < scores.size(); i++){
-        if(inho[0] < scores[i][0] && inho[1] < scores[i][1])
+    for(auto s : scores){
+        if(inho[0] < s[0] && inho[1] < s[1])
             return -1;
-        if(inho_total < scores[i][0] + scores[i][1]){
+        if(inho_total < s[0] + s[1]){
             for(int j = 1; j < scores.size(); j++){
-                if(scores[i][0] < scores[j][0] && scores[i][1] < scores[j][1])
+                if(s[0] < scores[j][0] && s[1] < scores[j][1])
                     break;
                 if(j == scores.size() - 1)
-                    score_total.push_back(scores[i][0] + scores[i][1]);
+                    score_total.push_back(s[0] + s[1]);
             }
         }
     }
     sort(score_total.rbegin(), score_total.rend());
-    for(int i = 0; i < score_total.size(); i++){
+    for(int i = 0; i < score_total.size(); i++)
         if(score_total[i] == inho_total)
             return i + 1;
-    }
 }
