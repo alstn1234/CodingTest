@@ -10,9 +10,8 @@ void dfs(int k, vector<vector<int>> dun, int count, vector<bool> visited){
             continue;
         if(dun[i][0] <= k){
             visited[i] = true;
-            dfs(k - dun[i][1], dun, ++count, visited);
+            dfs(k - dun[i][1], dun, count + 1, visited);
             visited[i] = false;
-            count--;
         }
     }
     answer = max(answer, count); 
