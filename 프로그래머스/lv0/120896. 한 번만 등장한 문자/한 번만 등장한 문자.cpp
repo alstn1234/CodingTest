@@ -15,6 +15,5 @@ string solution(string s) {
         if(it->second == 1)
             answer += it->first;
     }
-    sort(answer.begin(), answer.end());
     return answer;
 }
