@@ -1,6 +1,5 @@
 #include <string>
 #include <vector>
-#include <iostream>
 using namespace std;
 
 vector<int> dx = {-1, -1, -1, 0, 0, 1, 1, 1 };
@@ -43,10 +42,6 @@ int solution(vector<string> board) {
     bool ob = solve(board, 'O');
     bool xb = solve(board, 'X');
     
-    cout << ob << xb << endl;
-    /*if((!xb && ob && o-x==1) || (!ob && xb && o==x) || 
-       (!ob && !xb && (o-x==1 || o-x==0)))
-        return 1;*/
     if((o-x!=1 && o-x!=0) || (ob && xb) || (ob && o<=x) || (xb && o>x))
         return 0;
     return 1;
