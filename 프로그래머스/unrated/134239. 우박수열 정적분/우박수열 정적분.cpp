@@ -1,6 +1,5 @@
 #include <string>
 #include <vector>
-#include <iostream>
 
 using namespace std;
 
@@ -20,8 +19,6 @@ vector<double> solution(int k, vector<vector<int>> ranges) {
         }
         v.push_back(area);
     }
-    for(auto vv : v)
-        cout << vv << endl;
     for(auto range : ranges){
         int n = range[1]+v.size()-1;
         if(n+1 < range[0]){
@@ -29,7 +26,6 @@ vector<double> solution(int k, vector<vector<int>> ranges) {
             continue;
         }
         double sum = 0.0;
-        cout << n << endl;
         for(int i = range[0]; i <= n; i++){
             sum += v[i];
         }
