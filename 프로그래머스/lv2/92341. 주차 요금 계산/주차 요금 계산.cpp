@@ -6,7 +6,6 @@ using namespace std;
 
 vector<int> solution(vector<int> fees, vector<string> records) {
     vector<int> answer;
-    vector<pair<int, int>> v;
     map<string, int> m;
     map<string, int> price;
     
