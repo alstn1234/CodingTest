@@ -26,9 +26,8 @@ vector<double> solution(int k, vector<vector<int>> ranges) {
             continue;
         }
         double sum = 0.0;
-        for(int i = range[0]; i <= n; i++){
+        for(int i = range[0]; i <= n; i++)
             sum += v[i];
-        }
         answer.push_back(sum);
     }
     
