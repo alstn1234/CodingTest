@@ -9,7 +9,7 @@ vector<int> solution(vector<int> sequence, int k) {
     while(true){
         sum += sequence[n-idx];
         if(sum == k){
-            while(sequence[n] == sequence[n-idx-1])
+            while(n-idx-1 >= 0 && sequence[n] == sequence[n-idx-1])
                 n--;
             answer.push_back(n-idx);
             answer.push_back(n);
